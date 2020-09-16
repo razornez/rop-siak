@@ -1,0 +1,238 @@
+* {margin:0;padding:0}
+
+/* Slider */
+#slider {
+  display:block;
+  width:300px; /* dimensi lebar */
+  height:200px;; /* dimensi tinggi */
+  margin:50px auto 0;
+  overflow:hidden; /* Sembunyikan muatan elemen '.container' yang berlebih dari '#slider' */
+  position:relative;
+  }
+  /* Slider */
+#slider {
+  display:block;
+  width:650px; /* dimensi lebar */
+  height:400px;; /* dimensi tinggi */
+  margin:50px auto 0;
+  overflow:hidden; /* Sembunyikan muatan elemen '.container' yang berlebih dari '#slider' */
+  position:relative;
+}
+/* Untuk caption */
+#slider figcaption {
+  display:block;
+  background-color:black;
+  font:normal normal 11px Arial,Sans-Serif;
+  color:white;
+  opacity:.8;
+  padding:10px 15px;
+  position:absolute;
+  right:0;
+  bottom:-100px; /* sembunyikan dengan cara ini :) */
+  left:0;
+  z-index:4;
+}
+#slider img {
+  display:block;
+  margin:0 0;
+  width:650px; /* dimensi lebar */
+  height:400px; /* dimensi tinggi */
+  position:absolute;
+  top:0;
+  left:0;
+}
+/* Navigasi */
+#slider-nav {
+  display:block;
+  width:300px;
+  margin:10px auto;
+  text-align:center;
+}
+#slider-nav a {
+  display:inline-block;
+  width:15px;
+  height:15px;
+  background-color:#bbb;
+  font-size:0;
+  color:transparent;
+  overflow:hidden;
+  text-indent:-99px;
+  margin:0 2px 0 0;
+  border:2px solid white;
+  -webkit-box-shadow:0 1px 2px rgba(0,0,0,.4);
+  -moz-box-shadow:0 1px 2px rgba(0,0,0,.4);
+  box-shadow:0 1px 2px rgba(0,0,0,.4);
+  -webkit-border-radius:100%;
+  -moz-border-radius:100%;
+  border-radius:100%;
+}
+#slider-nav .active {
+  background-color:#6A7E00;
+}
+
+/**
+ * Tip yang baik untuk slideshow berupa gambar:
+ * Sembunyikan tampilan sampai semua gambar benar-benar termuat agar saat gambar sedang dimuat, dia tidak merusak pemandangan kita :)
+ */
+#slider .container, #slider figcaption {display:none}
+#slider-nav {opacity:0}
+.style1 {
+	color: #FFFFFF;
+	font-size: 40px;
+	font-family: Backslash;
+}
+.style4 {
+	color: #FFFFFF;
+	font-size: 18px;
+	font-family: Backslash;
+}
+</style>
+<style>
+#autonav {
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  z-index:9999;
+  margin:0;
+  padding:0;
+  font:normal normal 11px/normal Helmet,Freesans,Sans-Serif;
+  color:white;
+  border-bottom:2px solid #333;
+  -webkit-box-shadow:0 1px 7px rgba(0,0,0,.4);
+  -moz-box-shadow:0 1px 7px rgba(0,0,0,.4);
+  box-shadow:0 1px 7px rgba(0,0,0,.4);
+}
+
+#autonav ul {
+  margin:0;
+  padding:0;
+  height:30px;
+  background-color:#2e2e2e;
+}
+
+#autonav ul li {
+  list-style:none;
+  display:inline;
+  float:left;
+  margin:0;
+  padding:0;
+  position:relative;
+}
+
+#autonav ul li a {
+  display:block;
+  line-height:30px;
+  height:30px;
+  overflow:hidden;
+  margin:0;
+  padding:0 15px;
+  border-left:1px solid #155F90;
+  border-right:1px solid #082E46;
+  text-decoration:none;
+  text-shadow:0 -1px 0 rgba(0,0,0,.4);
+  color:white;
+  font-weight:bold;
+}
+
+#autonav ul li a:hover,
+#autonav ul li:hover > a {
+  background-color:#0F486C;
+  border-right-color:#082434;
+}
+
+#autonav ul ul {
+  position:absolute;
+  width:220px;
+  height:auto;
+  top:100%;
+  left:0;
+  z-index:9999;
+  background-color:#111;
+  -webkit-box-shadow:0 1px 3px rgba(0,0,0,.7);
+  -moz-box-shadow:0 1px 3px rgba(0,0,0,.7);
+  box-shadow:0 1px 3px rgba(0,0,0,.7);
+  overflow:visible !important;
+  display:none;
+}
+
+#autonav ul ul:before {
+  content:"";
+  width:0;
+  height:0;
+  border:7px solid transparent;
+  border-bottom-color:#111;
+  position:absolute;
+  top:-14px;
+  left:24px;
+}
+
+#autonav ul ul li {
+  display:block;
+  float:none;
+}
+
+#autonav ul ul li a {
+  border:none;
+  color:#999;
+}
+
+#autonav ul ul ul {
+  top:0;
+  left:100%;
+}
+
+#autonav li:hover > ul {display:block}
+
+/* Khusus JSON */
+#autonav ul.json-dropdown {overflow:hidden}
+
+#autonav ul.json-dropdown li {
+  cursor:pointer;
+  display:block;
+  padding:7px 10px;
+  margin:0;
+  overflow:hidden;
+}
+
+#autonav ul.json-dropdown li a {
+  line-height:14px;
+  height:auto !important;
+  padding:0;
+}
+
+#autonav ul.json-dropdown li a:hover {
+  text-decoration:underline;
+  background:transparent;
+}
+
+#autonav li ul li a:hover,
+#autonav li ul.json-dropdown li:hover {background-color:#000}
+
+#autonav ul.json-dropdown img.rp-thumb {
+  padding:0;
+  outline:none;
+  border:2px solid #333;
+  background-color:#02406C;
+  display:block;
+  float:left;
+  margin:0 10px 0 0;
+  width:40px;
+  height:40px;
+}
+
+#autonav .subposts span,
+#autonav .subcomments span {
+  font-family:Verdana,Tahoma,Helmet,Freesans,Sans-Serif;
+  color:#666;
+  font-size:9px;
+}
+
+/* Drop down menu untuk ukuran yang cukup lebar */
+#autonav .wide {width:400px}
+.style7 {
+	font-size: 12px;
+	color: #FFFFFF;
+}
+.style8 {font-size: 14px; color: #FFFFFF; }
+.style12 {font-size: 18px; color: #000000; font-family: "Times New Roman", Times, serif; font-weight: bold; }
